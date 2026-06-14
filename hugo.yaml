@@ -1,0 +1,6 @@
+baseURL: 'https://nycnerd.com'
+title: 'NYCNERD'
+theme: 'nycnerd-sqsp'
+locale: 'en-us'
+disableKinds: ['rss', 'taxonomy']
+preserveTaxonomyNames: false
