@@ -17,6 +17,7 @@
   - [superpowers](https://github.com/obra/superpowers.git)
 
 - git actions for building and pushing the container image
+    - add the token to repo > settings > actions > new repository secret under `GHCR_TOKEN`
     - setup a [classic personal access token](https://github.com/settings/tokens)
         - give permission `write:packages`
     - add to repository secrets (repo > settings > secrets and variables > actions > new repository secret)
