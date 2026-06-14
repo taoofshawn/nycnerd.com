@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>{{ if .IsHome }}NYCNERD{{ else }}{{ .Title }} — NYCNERD{{ end }}</title>
+<meta property="og:site_name" content="NYCNERD">
+<meta property="og:title" content="{{ if .IsHome }}NYCNERD{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+{{ if or .IsHome (eq .Section "posts") }}<link rel="stylesheet" href="/css/gallery.css">{{ end }}
+</head>
+<body class="page-alignment-center navigation-position-bottom{{ if .IsHome }} homepage{{ end }}{{ if not .IsHome }} page{{ end }}">
+<div id="canvasWrapper">
+<div id="canvas">
+  <div id="headerWrapper">
+    <header id="header">
+      <div class="wrapper">
+        <span class="ctrl-button menu"><a class="icon-hamburger" id="menu-toggle"></a></span>
+        <div id="logo">
+          <h1 class="logo logo-text"><a href="/">NYCNERD</a></h1>
+        </div>
+        <div id="topNav">
+          <nav class="main-nav">
+            <ul>
+              <li class="{{ if .IsHome }}active-link{{ end }}"><a href="/">Photoblog</a></li>
+              <li class="{{ if eq .RelPermalink "/about/" }}active-link{{ end }}"><a href="/about/">About</a></li>
+              <li class="{{ if eq .RelPermalink "/contact/" }}active-link{{ end }}"><a href="/contact/">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <ul class="controls">
+          <li class="ctrl-button all"><a class="icon-index-grid" id="grid-toggle"></a></li>
+          <li class="ctrl-button close"><a class="icon-close" id="grid-close"></a></li>
+        </ul>
+      </div>
+    </header>
+    <nav id="mobile-navigation">
+      <ul>
+        <li class="{{ if .IsHome }}active-link{{ end }}"><a href="/">Photoblog</a></li>
+        <li class="{{ if eq .RelPermalink "/about/" }}active-link{{ end }}"><a href="/about/">About</a></li>
+        <li class="{{ if eq .RelPermalink "/contact/" }}active-link{{ end }}"><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div id="pageWrapper">
+    <section id="page">
+      <div id="mainContent" role="main">
+        {{ block "main" . }}{{ end }}
+      </div>
+    </section>
+  </div>
+</div>
+</div>
+<script src="/js/gallery.js"></script>
+</body>
+</html>

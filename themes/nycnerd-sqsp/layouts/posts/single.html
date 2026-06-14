@@ -1,0 +1,34 @@
+{{ define "main" }}
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+<div id="fullscreenBrowser" class="galleryWrapper">
+  <div class="slideshowWrapper">
+    <div class="slideshow">
+      {{ range $i, $photo := $posts.ByDate.Reverse }}
+      <div class="slide" data-slide-id="{{ $photo.File.UniqueID }}" data-slide-url="{{ $photo.Params.slug }}">
+        <a href="/posts/{{ $photo.Params.slug }}/" class="slide-link">
+          <div class="imageWrapper has-info">
+            <img data-src="/images/{{ $photo.Params.image }}" data-image="/images/{{ $photo.Params.image }}"
+                 alt="{{ $photo.Title }}"
+                 data-image-dimensions="{{ $photo.Params.width }}x{{ $photo.Params.height }}"
+                 data-load="false" data-image-stretch="false" />
+          </div>
+          <div class="image-detail-wrapper">
+            <h2>{{ $photo.Title }}</h2>
+            <div class="image-description"><p>{{ $photo.Params.display_date }}</p></div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  <a class="gallery-nav prev" id="prev-slide">&#10094;</a>
+  <a class="gallery-nav next" id="next-slide">&#10095;</a>
+  <div class="grid-index" id="grid-index">
+    {{ range $i, $photo := $posts.ByDate.Reverse }}
+    <div class="grid-thumb" data-index="{{ $i }}">
+      <img src="/images/{{ $photo.Params.image }}" alt="{{ $photo.Title }}" />
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
