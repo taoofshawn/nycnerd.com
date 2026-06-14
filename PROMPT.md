@@ -100,7 +100,8 @@ nycnerd.com is a Squarespace 7 photoblog with:
 - **Grid close animation**: Grid slides down AND navbar drops **simultaneously** over 1s, then grid display removed.
 - **Arrow & title overlay behavior**: Navigation arrows AND photo title/date overlay appear on hover over gallery area. Both **dim to opacity 0.5 when not hovered**, full opacity on direct hover. Both **hidden** (opacity 0) on gallery `mouseleave` and `document mouseleave`. No timed fadeout. Transition: 0.15s. Controlled by shared `showUI`/`hideUI` functions.
 - **Homepage gallery**: Full-viewport-height slideshow. Each slide:
-  - Image centered with **space around it** (`max-width: 90%, max-height: 85vh`, `object-fit: contain`)
+  - Image centered between viewport top and navbar top. `.slide` has `padding-bottom: 80px` so flex centering (100vh - 80px) works within the visible area above the navbar.
+  - Image constrained with `max-width: 90%, max-height: 85vh`, `object-fit: contain`
   - Title overlaid at bottom with semi-transparent `rgba(0,0,0,0.5)` background
   - Date below title
   - **Navigation arrows only visible on hover** over gallery area, fade out after 2s

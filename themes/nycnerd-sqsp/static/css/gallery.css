@@ -30,6 +30,7 @@
   opacity: 0;
   transition: opacity 0.8s ease;
   z-index: 1;
+  padding-bottom: 80px;
 }
 
 .slide.active {

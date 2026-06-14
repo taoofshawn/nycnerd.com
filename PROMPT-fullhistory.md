@@ -117,3 +117,5 @@ change the about and contact pages to just about.md and contact.md in the conten
 please address these items and update the spec/prompt to consider this for future attempts.
 ______________________________________________________________________________________________________________________________________________
 
+center the image in the home page and single page between the top of the navbar and the top edge. It looks like the height of the navbar is currently not considered when centering
+please address these items and update the spec/prompt to consider this for future attempts
