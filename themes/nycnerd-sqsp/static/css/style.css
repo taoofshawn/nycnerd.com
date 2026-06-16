@@ -291,6 +291,10 @@ body.page #pageWrapper {
     padding: 0 20px;
   }
 
+  #topNav {
+    display: none;
+  }
+
   .ctrl-button.menu {
     display: flex;
     align-items: center;
