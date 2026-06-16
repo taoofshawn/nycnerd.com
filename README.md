@@ -27,4 +27,4 @@
 ### Todo
 
 - add/style contact page
-- confirm/add responsiveness (for mobile)
+- mobile view on firefox isnt 100% ¯\(ツ)/¯

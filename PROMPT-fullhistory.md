@@ -119,3 +119,21 @@ ________________________________________________________________________________
 
 center the image in the home page and single page between the top of the navbar and the top edge. It looks like the height of the navbar is currently not considered when centering
 please address these items and update the spec/prompt to consider this for future attempts
+
+______________________________________________________________________________________________________________________________________________
+
+mobile view:
+- when on the photoblog and hamburger menu is activated, there is still no X visible to deactivate the menu
+- when on the about and contact pages, the hamburger menu is visible but does not activate when clicked
+please address these items and update the spec/prompt to consider this for future attempts
+
+______________________________________________________________________________________________________________________________________________
+mobile view: 
+- the X is still not appearing. 
+- the gallery button on the navbar is not activating when on the about/contact pages
+please address these items 
+
+______________________________________________________________________________________________________________________________________________
+mobile view: 
+- the X is still not visible. Lets confirm we are talking about the same thing.  I'm referring to the navbar menu that is opened when clicking on the hamburger icon.  Not the gallery being expanded. After I click on the hamburger menu and see "photoblog, about, contact", the X should appear on that expanded menu. 
+- Return the grid toggle to the about/contact pages and make them link to the photoblog page with the gallery expanded

@@ -53,7 +53,7 @@ Full-screen slideshow gallery. Each slide has:
 | Page alignment | Center |
 | Color scheme | Body background `#50535e` (dark slate gray), bottom bar `#6e717f` (medium gray), light text |
 | Social buttons | Enabled but no accounts configured |
-| Mobile | Hamburger menu, responsive |
+| Mobile | Hamburger menu works on ALL pages (including about/contact). On mobile (`≤768px`): bottom nav links (Photoblog, About, Contact) are hidden; hamburger icon appears. Tapping hamburger opens a full-screen nav overlay (`#mobile-navigation`) that covers from `top: 0` to `bottom: 80px` (stops above the fixed navbar). The icon **transforms to an X** — uses a separate `.icon-close-btn` element toggled via `display: none`/`display: flex` with the `is-close` class on `.ctrl-button.menu`. The click handler is on the **parent span** (`.ctrl-button.menu`), not the hamburger `<a>`, so both hamburger and X work. The menu toggle logic runs **before** the gallery's `totalSlides === 0` guard. Grid toggle on about/contact pages links to `/` (navigates to photoblog). |
 
 ### Technical Details
 - Font loading: Typekit + Google Fonts (Raleway)

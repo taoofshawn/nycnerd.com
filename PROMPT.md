@@ -107,7 +107,11 @@ nycnerd.com is a Squarespace 7 photoblog with:
   - **Navigation arrows only visible on hover** over gallery area, fade out after 2s
   - Squarespace "Center" gallery style — not full-bleed
 - **Grid index view**: Full-screen overlay with thumbnail grid of all photos. Click a thumbnail to go to that photo.
-- **Mobile**: Responsive. Hamburger menu in header (top-left on mobile). Nav hidden on mobile, toggled by hamburger.
+- **Mobile** (`≤768px`): Bottom nav links (Photoblog, About, Contact) are hidden. Hamburger icon appears. Tapping hamburger opens a full-screen nav overlay; the icon **transforms to an X** — tapping it closes the menu. Implement via a `.is-close` class on `.ctrl-button.menu` that swaps the `::before` content from hamburger to X character (`\2715`).
+- **Mobile nav overlay must not cover the navbar.** The `#mobile-navigation` should cover from `top: 0` to `bottom: 80px` (not `bottom: 0`) so the bottom navbar with "NYCNERD" and the hamburger/X stays visible.
+- **Mobile menu must work on ALL pages.** The menu toggle code must be registered **before** the `if (totalSlides === 0) return;` guard in the gallery JS, otherwise about/contact pages will silently exit.
+- **Hamburger to X toggle**: Use a separate `.icon-close-btn` element inside `<span class="ctrl-button menu">`. Toggle via `display: none`/`display: flex` using `is-close` class on the **parent span**. The click handler must be on the parent span (`.ctrl-button.menu`), not the hamburger `<a>`, so both hamburger and X are clickable. Give `.icon-close-btn::before` explicit `width: 20px; height: 20px; display: block; line-height: 20px` so the X character renders reliably.
+- **Grid toggle on about/contact**: Keep `.ctrl-button.all` visible but link it (`href="/"`). The JS uses `e.preventDefault()` only when `totalSlides > 0`, so on about/contact it navigates to the photoblog instead of trying to open the grid.
 - **No footer** — match the source (which has none).
 
 ## Execution Steps

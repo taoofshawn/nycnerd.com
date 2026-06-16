@@ -191,6 +191,36 @@ header .wrapper {
   content: '\2630';
 }
 
+.icon-close-btn {
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.icon-close-btn::before {
+  content: '\2715';
+  font-size: 18px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.ctrl-button.menu .icon-close-btn {
+  display: none;
+}
+
+.ctrl-button.menu.is-close .icon-hamburger {
+  display: none;
+}
+
+.ctrl-button.menu.is-close .icon-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body.page .controls .ctrl-button.close {
   display: none;
 }
@@ -259,7 +289,7 @@ body.page #pageWrapper {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 80px;
   z-index: 99;
   pointer-events: auto;
 }
