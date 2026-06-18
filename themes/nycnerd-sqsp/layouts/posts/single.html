@@ -5,7 +5,7 @@
     <div class="slideshow">
       {{ range $i, $photo := $posts.ByDate.Reverse }}
       <div class="slide" data-slide-id="{{ $photo.File.UniqueID }}" data-slide-url="{{ $photo.Params.slug }}">
-        <a href="/posts/{{ $photo.Params.slug }}/" class="slide-link">
+        <a href="/images/{{ $photo.Params.image }}" class="slide-link" target="_blank">
           <div class="imageWrapper has-info">
             <img data-src="/images/{{ $photo.Params.image }}" data-image="/images/{{ $photo.Params.image }}"
                  alt="{{ $photo.Title }}"

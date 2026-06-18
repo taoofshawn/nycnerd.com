@@ -118,6 +118,25 @@
     hideUI();
   });
 
+  var touchStartX = 0;
+  var touchStartY = 0;
+
+  if (fullscreenBrowser) {
+    fullscreenBrowser.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    });
+
+    fullscreenBrowser.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      var dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+        if (dx < 0) nextSlide();
+        else prevSlide();
+      }
+    });
+  }
+
   if (gridIndex) {
     gridIndex.addEventListener('click', function(e) {
       var thumb = e.target.closest('.grid-thumb');
