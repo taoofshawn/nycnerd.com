@@ -125,12 +125,12 @@
     fullscreenBrowser.addEventListener('touchstart', function(e) {
       touchStartX = e.touches[0].clientX;
       touchStartY = e.touches[0].clientY;
-    });
+    }, { passive: true });
 
     fullscreenBrowser.addEventListener('touchend', function(e) {
       var dx = e.changedTouches[0].clientX - touchStartX;
       var dy = e.changedTouches[0].clientY - touchStartY;
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 30) {
         if (dx < 0) nextSlide();
         else prevSlide();
       }
